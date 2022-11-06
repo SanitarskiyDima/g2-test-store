@@ -37,7 +37,7 @@ let user = {
     lastName: faker.name.lastName(),
     email: faker.internet.email(),
     address: faker.address.streetAddress(),
-    city: faker.address.city(),i
+    city: faker.address.city(),
     zone: '904',
     postCode: faker.address.zipCode(),
     countryId: 'United Kingdom',

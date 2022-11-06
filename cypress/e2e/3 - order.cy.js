@@ -1,5 +1,5 @@
 import user from '../fixtures/user.json'
-import {findProduct, isProductPage} from '../support/helper'
+import {findProduct, isProductPage, findNewProd} from '../support/helper'
 
 it('Order', () => {
 
@@ -12,8 +12,17 @@ it('Order', () => {
         .closest("form")
         .submit();
 
-
-    findProduct('qweqwe')
+    // cy.get('body').then(body => {
+    //     cy.log(`Number: ${body.find('.pagination a:contains(">")').length}`)
+    //     if(cy.wrap(body).find('.pagination a:contains(">")').length > 0){
+    //         cy.log('exist')
+    //     } else {
+    //         cy.log('NOT exist')
+    //     }
+    // })
+        
+    
+    findNewProd('Benefit Bella Bamba')
 
     cy.get('.productpagecart').click()
     cy.get('#cart_checkout1').click()

@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-10-30T13:26:51.824Z",
+    "end": "2022-10-30T13:26:54.425Z",
+    "duration": 2601,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f0d5e39f-01e5-4fe8-917b-3235576c9268",
+      "title": "",
+      "fullFile": "cypress/e2e/2 - authorization.cy.js",
+      "file": "cypress/e2e/2 - authorization.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ebe40926-b605-40a1-9ea9-70e16e4d5e15",
+          "title": "qweqwe",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Authorization",
+              "fullTitle": "qweqwe Authorization",
+              "timedOut": null,
+              "duration": 2470,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('Open website login page');\ncy.visit('/index.php?rt=account/login');\ncy.log('Check user is unauthorized');\ncy.getCookie('customer').should('be.null');\ncy.log('Authorize user');\ncy.get('#loginFrm_loginname').type(_user.default.email);\ncy.get('#loginFrm_password').type(_user.default.password);\ncy.get('button[type=\"submit\"]').contains('Login').click();\ncy.log('Extract token');\ncy.getCookie('customer').should('exist').then(cookie => {\n  cookieCustomer = cookie;\n});\ncy.getCookie('AC_SF_8CEFDA09D5').should('exist').then(cookie => {\n  cookieAC_SF_8CEFDA09D5 = cookie;\n});",
+              "err": {},
+              "uuid": "6e100dbd-5444-4a41-ac88-fd4cde39dd37",
+              "parentUUID": "ebe40926-b605-40a1-9ea9-70e16e4d5e15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Demo how cookie works",
+              "fullTitle": "qweqwe Demo how cookie works",
+              "timedOut": null,
+              "duration": 101,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('Open website main page');\ncy.visit('/');\ncy.log('Check user is unauthorized');\ncy.getCookie('customer').should('be.null');\ncy.log('Set token in cookie');\ncy.setCookie('customer', `${token.value}`);\ncy.log('Cookie is not null');\ncy.getCookie('customer').should('not.be.null');\ncy.log('Reload the page to get authorized user');\ncy.reload();\ncy.log('Reload page to get logged user');\ncy.get('#customernav').should('contain', `Welcome back ${_user.default.username}`);",
+              "err": {
+                "message": "ReferenceError: token is not defined",
+                "estack": "ReferenceError: token is not defined\n    at Context.eval (webpack:///./cypress/e2e/2 - authorization.cy.js:41:36)",
+                "diff": null
+              },
+              "uuid": "635e2cf3-143d-41d9-81e7-d68ce9c6230d",
+              "parentUUID": "ebe40926-b605-40a1-9ea9-70e16e4d5e15",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6e100dbd-5444-4a41-ac88-fd4cde39dd37"
+          ],
+          "failures": [
+            "635e2cf3-143d-41d9-81e7-d68ce9c6230d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2571,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "configFile": "reporter-config.json",
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

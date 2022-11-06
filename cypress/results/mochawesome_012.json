@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 2,
+    "passes": 2,
+    "pending": 1,
+    "failures": -1,
+    "start": "2022-10-30T14:23:19.690Z",
+    "end": "2022-10-30T14:23:26.328Z",
+    "duration": 6638,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 33.33333333333333,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba71df19-4d7a-4370-86de-40d41e6044cc",
+      "title": "",
+      "fullFile": "cypress/e2e/1 - registration.cy.js",
+      "file": "cypress/e2e/1 - registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Registration",
+          "fullTitle": "Registration",
+          "timedOut": null,
+          "duration": 0,
+          "state": "pending",
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": true,
+          "context": null,
+          "code": "",
+          "err": {},
+          "uuid": "3a2333d3-9fb1-4a64-b948-b4c3be94fbee",
+          "parentUUID": "ba71df19-4d7a-4370-86de-40d41e6044cc",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Registration",
+          "fullTitle": "Registration",
+          "timedOut": null,
+          "duration": 5576,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/');\ncy.get('.topnavbar [data-id=\"menu_account\"]').click();\ncy.get('#accountFrm button').click();\ncy.get('#AccountFrm_firstname').type(user.firstName);\ncy.get('#AccountFrm_lastname').type(user.lastName);\ncy.get('#AccountFrm_email').type(user.email);\ncy.get('#AccountFrm_address_1').type(user.address);\ncy.get('#AccountFrm_city').type(user.city);\ncy.get('#AccountFrm_zone_id').select(1);\ncy.get('#AccountFrm_postcode').type(user.postCode);\ncy.get('#AccountFrm_country_id').select(user.countryId);\ncy.get('#AccountFrm_loginname').type(user.username);\ncy.get('#AccountFrm_password').type(user.password);\ncy.get('#AccountFrm_confirm').type(user.password);\ncy.get('#AccountFrm_newsletter0').check();\ncy.get('#AccountFrm_agree').check();\ncy.get('button[title=\"Continue\"]').click();\ncy.get('#maincontainer').contains(user.firstName).should('exist');",
+          "err": {},
+          "uuid": "06bb490b-10ce-41e8-9863-d9049bf7c205",
+          "parentUUID": "ba71df19-4d7a-4370-86de-40d41e6044cc",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Authorization",
+          "fullTitle": "Authorization",
+          "timedOut": null,
+          "duration": 1028,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.log('Open website login page');\ncy.visit('/index.php?rt=account/login');\ncy.log('Check user is unauthorized');\ncy.getCookie('customer').should('be.null');\ncy.log('Authorize user');\ncy.get('#loginFrm_loginname').type(user.username);\ncy.get('#loginFrm_password').type(user.password);\ncy.get('button[type=\"submit\"]').contains('Login').click();\nconsole.log(user);",
+          "err": {},
+          "uuid": "c7f7545e-d268-40d9-8901-3578868add69",
+          "parentUUID": "ba71df19-4d7a-4370-86de-40d41e6044cc",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "06bb490b-10ce-41e8-9863-d9049bf7c205",
+        "c7f7545e-d268-40d9-8901-3578868add69"
+      ],
+      "failures": [],
+      "pending": [
+        "3a2333d3-9fb1-4a64-b948-b4c3be94fbee"
+      ],
+      "skipped": [],
+      "duration": 6604,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "configFile": "reporter-config.json",
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
