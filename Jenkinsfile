@@ -1,6 +1,8 @@
 pipeline {
     agent any
 
+   tools {nodejs "Node12"}
+
     stages {
         stage('Dependencies') {
             steps {
