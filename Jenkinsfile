@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Test 1') {
             steps {
+                sh 'npm run allure:clear'
                 sh 'npm run cy:run'
+                sh 'npm run allure:report'
             }
         }
     }
