@@ -7,13 +7,10 @@ pipeline {
                 sh 'npm i'
             }
         }
-        stage('e2e Tests') {
-                stage('Test 1') {
-                    steps {
-                        sh 'npm run cy:run'
-                    }
-                }
-                
-    }
+        stage('Test 1') {
+            steps {
+                sh 'npm run cy:run'
+            }
+        }
     }
 }
