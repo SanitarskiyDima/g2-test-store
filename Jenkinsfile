@@ -22,16 +22,10 @@ pipeline {
                     sh 'npm run allure:report'
                     sh 'ls'
                     sh 'pwd'
-                    publishHTML([
-                        allowMissing: false, 
-                        alwaysLinkToLastBuild: false, 
-                        keepAll: false, 
-                        reportDir: 'allure-report', 
-                        reportFiles: 'index.html', 
-                        reportName: 'Allure report', 
-                        reportTitles: '', 
-                        useWrapperFileDirectly: true
-                        ])
+                    allure( 
+                        includeProperties: false, 
+                        jdk: '', 
+                        results: [[path: 'allure-results']])
             }
         }
     }
