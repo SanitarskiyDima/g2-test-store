@@ -2,7 +2,7 @@ import user from '../fixtures/user.json'
 import * as domain from "domain";
 import loginPage from "../support/pages/LoginPage";
 
-describe('Authorization suite', () => {
+describe.only('Authorization suite', () => {
 
     it('Authorization', () => {
         loginPage.visit();
