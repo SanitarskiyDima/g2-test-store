@@ -20,6 +20,8 @@ pipeline {
         stage('Report') {
             steps {
                     sh 'npm run allure:report'
+                    sh 'ls'
+                    sh 'pwd'
                     publishHTML([
                         allowMissing: false, 
                         alwaysLinkToLastBuild: false, 
