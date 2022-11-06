@@ -1,8 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"skipped","Sun Nov 06 19:28:11 EET 2022","Sun Nov 06 19:28:11 EET 2022","1","","qweqwe","","","","Demo how cookie works",""
-"failed","Sun Nov 06 19:29:31 EET 2022","Sun Nov 06 19:30:31 EET 2022","60157","","Authorization suite","","","","Authorization",""
-"skipped","Sun Nov 06 19:29:29 EET 2022","Sun Nov 06 19:29:29 EET 2022","3","","","","","","Order",""
-"passed","Sun Nov 06 19:28:07 EET 2022","Sun Nov 06 19:28:11 EET 2022","3935","","qweqwe","","","","Authorization",""
-"passed","Sun Nov 06 19:27:35 EET 2022","Sun Nov 06 19:28:00 EET 2022","24706","","","","","","Authorization",""
-"failed","Sun Nov 06 19:30:37 EET 2022","Sun Nov 06 19:31:37 EET 2022","60173","","","","","","Product found on general list",""
-"failed","Sun Nov 06 19:26:35 EET 2022","Sun Nov 06 19:27:35 EET 2022","60159","","","","","","Registration",""
