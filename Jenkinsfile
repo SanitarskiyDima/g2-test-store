@@ -1,8 +1,6 @@
 pipeline {
     agent any
 
-   tools {nodejs "NodeJS 18.12.0"}
-
     stages {
         stage('Dependencies') {
             steps {
