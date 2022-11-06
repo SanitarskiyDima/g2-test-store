@@ -20,15 +20,6 @@ pipeline {
         stage('Report') {
             steps {
                     sh 'npm run allure:report'
-                    script {
-                        allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'allure-report']]
-                        ])
-    }
             }
         }
     }
