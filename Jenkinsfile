@@ -20,6 +20,16 @@ pipeline {
         stage('Report') {
             steps {
                     sh 'npm run allure:report'
+                    publishHTML([
+                        allowMissing: false, 
+                        alwaysLinkToLastBuild: false, 
+                        keepAll: false, 
+                        reportDir: 'allure-report', 
+                        reportFiles: 'index.html', 
+                        reportName: 'Allure report', 
+                        reportTitles: '', 
+                        useWrapperFileDirectly: true
+                        ])
             }
         }
     }
