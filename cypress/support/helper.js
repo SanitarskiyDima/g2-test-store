@@ -19,6 +19,20 @@ export function findProduct(productName) {
     })
 }
 
+export function login(user) {
+
+    cy.log('Open website login page');
+    cy.visit('/index.php?rt=account/login');
+
+    cy.log('Check user is unauthorized');
+    cy.getCookie('customer').should('be.null');
+
+    cy.log('Authorize user');
+    cy.get('#loginFrm_loginname').type(user.email);
+    cy.get('#loginFrm_password').type(user.password);
+    cy.get('button[type="submit"]').contains('Login').click();
+
+}
 
 export function findNewProd(productName) {
     cy.get('#filter_keyword').type('i').closest('form').submit();
@@ -42,12 +56,12 @@ export function findNewProd(productName) {
 }
 
 
-export function findProductWithRecursion(productName){
+export function findProductWithRecursion(productName) {
     cy.get('body').then((body) => {
         if (body.find(`[title="${productName}"]`).length > 0) {
             cy.get(`[title="${productName}"]`).click();
         }
-        else{
+        else {
             cy.get('.pagination li a').contains('>').click();
             findProductWithRecursion(productName);
         }

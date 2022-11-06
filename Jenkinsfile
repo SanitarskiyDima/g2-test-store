@@ -14,13 +14,8 @@ pipeline {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     sh 'npm run allure:clear'
                     sh 'npm run cy:run'
-                    sh 'npm run allure:report'
+                    sh 'npm run ci-allure:report'
                 }
-            }
-        }
-        stage('Report') {
-            steps {
-                sh 'npm run allure:report'
             }
         }
     }

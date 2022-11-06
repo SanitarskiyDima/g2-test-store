@@ -29,7 +29,7 @@ describe('qweqwe', () => {
         });
     })
 
-    it('Demo how cookie works', () => {
+    it.skip('Demo how cookie works', () => {
 
         cy.log('Open website main page');
         cy.visit('/');
